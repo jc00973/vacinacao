@@ -1,0 +1,597 @@
+/*
+* reset.css
+* by Paulo Melo
+*/
+
+
+/**
+* At-rules - Set the encoding of the style sheet to Unicode UTF-8
+* Mozilla Developer Network [https://developer.mozilla.org/en-US/docs/Web/CSS/@charset]
+*
+* @charset "UTF-8";
+*/
+
+
+/**
+* Basic UI - Apply a natural box layout model to all elements. [Firefox, WebKit, Opera and IE8+]
+* Paul Irish [http://www.paulirish.com/2012/box-sizing-border-box-ftw/]
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+html * {
+  box-sizing: inherit;
+}
+
+
+/**
+  * Basic Box Model - Correct 'block' display not defined in [IE 8+]
+  */
+
+article,
+aside,
+datagrid,
+datalist,
+details,
+dialog,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+abbr,
+eventsource,
+mark,
+meter,
+time,
+output,
+bb {
+  display: inline;
+}
+
+
+/* Basic Box Model - Remove default Margin. */
+
+body,
+blockquote,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+/* Basic Box Model - Remove default Margin and Padding. */
+
+button,
+code,
+dd,
+dl,
+dt,
+fieldset,
+hr,
+input,
+legend,
+menu,
+ol,
+pre,
+select,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Remove default Border. */
+
+a img,
+abbr,
+button,
+fieldset,
+hr,
+iframe,
+input,
+select,
+table,
+textarea {
+  border: 0 none;
+}
+
+
+/* Alignments */
+
+label,
+button,
+input,
+select,
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+@media (min-width:0) and (max-width:576px) {
+
+  :root,
+  body {
+    font: normal normal normal 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+}
+
+@media (min-width:577px) and (max-width:767px) {
+
+  :root,
+  body {
+    font: normal normal normal 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+}
+
+@media (min-width:768px) and (max-width:992px) {
+
+  :root,
+  body {
+    font: normal normal normal 1rem/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+}
+
+@media (min-width:993px) {
+
+  :root,
+  body {
+    font: normal normal normal 100%/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+}
+
+/*
+    base.css */
+:root,
+body {
+  overflow-x: hidden;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  :root {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+button,
+input,
+optgroup,
+option,
+select,
+textarea {
+  font: normal normal normal 100%/normal -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  text-rendering: optimizespeed;
+}
+
+address,
+b,
+caption,
+cite,
+code,
+dfn,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+optgroup,
+option,
+strong,
+th,
+var {
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizespeed;
+}
+
+strong,
+th,
+b {
+  font-weight: bold;
+}
+
+table {
+  font-size: inherit;
+  width: 100%;
+}
+
+address,
+p,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+ol,
+ul,
+textarea {
+  line-height: 1.61803;
+  text-rendering: optimizespeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+small {
+  font-size: 80%;
+}
+
+ul,
+menu,
+dir,
+ol {
+  list-style: none;
+}
+
+html:focus,
+a:hover,
+a:active {
+  outline: 0;
+}
+
+:active,
+:focus {
+  outline: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  /* color: inherit; */
+}
+
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+object,
+embed {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+}
+
+embed,
+img,
+object,
+svg {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
+
+dl,
+dt,
+dd {
+  vertical-align: top;
+}
+
+.lt-ie8 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+[hidden] {
+  display: none;
+}
+
+[readonly],
+[disabled] {
+  cursor: default;
+  opacity: .75;
+}
+
+[disabled],
+[readonly],
+[unselectable] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+blockquote:last-child,
+pre:last-child,
+table:last-child {
+  margin-bottom: 0;
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+
+code {
+  line-height: 1;
+}
+
+kbd {
+  padding: 0 .25rem;
+  border: solid 1px;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+  border-bottom: dotted 1px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #ddd;
+}
+
+@media screen {
+  [hidden~=screen] {
+    display: inherit;
+  }
+
+  [hidden~=screen]:not(:active):not(:focus):not(:target) {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+  }
+}
+
+input::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+.form-control::-webkit-input-placeholder {
+  transition: all .4s cubic-bezier(.160, .560, .170, .999);
+  opacity: .4;
+  color: inherit;
+  font-weight: 500;
+}
+
+input:-moz-placeholder,
+select:-moz-placeholder,
+textarea:-moz-placeholder,
+.form-control:-moz-placeholder {
+  transition: all .4s cubic-bezier(.160, .560, .170, .999);
+  opacity: .4;
+  color: inherit;
+  font-weight: 500;
+}
+
+input::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder,
+.form-control::-moz-placeholder {
+  transition: all .4s cubic-bezier(.160, .560, .170, .999);
+  opacity: .4;
+  color: inherit;
+  font-weight: 500;
+}
+
+input:-ms-input-placeholder,
+select:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+.form-control:-ms-input-placeholder {
+  transition: all .4s cubic-bezier(.160, .560, .170, .999);
+  opacity: .4;
+  color: inherit;
+  font-weight: 500;
+}
+
+
+input:hover::-webkit-input-placeholder,
+select:hover::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder,
+.form-control:hover::-webkit-input-placeholder {
+  opacity: .5;
+  text-shadow: 0 0 0;
+}
+
+input:hover:-moz-placeholder,
+select:hover:-moz-placeholder,
+textarea:hover:-moz-placeholder,
+.form-control:hover:-moz-placeholder {
+  opacity: .5;
+  text-shadow: 0 0 0;
+}
+
+input:hover::-moz-placeholder,
+select:hover::-moz-placeholder,
+textarea:hover::-moz-placeholder,
+.form-control:hover::-moz-placeholder {
+  opacity: .5;
+  text-shadow: 0 0 0;
+}
+
+input:hover:-ms-input-placeholder,
+select:hover:-ms-input-placeholder,
+textarea:hover:-ms-input-placeholder,
+.form-control:hover:-ms-input-placeholder {
+  opacity: .5;
+  text-shadow: 0 0 0;
+}
+
+
+input:focus::-webkit-input-placeholder,
+select:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+.form-control:focus::-webkit-input-placeholder {
+  transition-delay: 0.4s;
+  opacity: 0.25;
+}
+
+input:focus:-moz-placeholder,
+select:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder,
+.form-control:focus:-moz-placeholder {
+  transition-delay: 0.4s;
+  opacity: 0.25;
+}
+
+input:focus::-moz-placeholder,
+select:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder,
+.form-control:focus::-moz-placeholder {
+  transition-delay: 0.4s;
+  opacity: 0.25;
+}
+
+input:focus:-ms-input-placeholder,
+select:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder,
+.form-control:focus:-ms-input-placeholder {
+  transition-delay: 0.4s;
+  opacity: 0.25;
+}
+
+a:hover,
+a:active,
+a:focus,
+a:visited {
+  text-decoration: none !important;
+}
+
+a,
+img,
+.btn,
+input,
+select,
+textarea,
+.form-control {
+  transition: all .4s cubic-bezier(.160, .560, .170, .999);
+}
+
+/* select */
+.styled-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: 0 !important;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: none !important;
+  border: 0 none !important;
+}
+
+.styled-select select {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  padding: 0 2rem 0 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.styled-select::after {
+  content: "\f107";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  transform: translateX(0) translateY(-50%);
+  opacity: 0.8;
+  margin-right: 0.5rem;
+  font: normal normal 900 1.5rem/1rem 'FontAwesome';
+  color: #ff8c18;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-drag: none;
+}

@@ -1,0 +1,826 @@
+@charset "UTF-8";
+
+// ------------------------------------------------
+// ESTILO DAS PÁGINAS DE CONTA
+// ------------------------------------------------
+
+.page.-red {
+
+  .account {
+    background-color: $c-alt;
+    background: linear-gradient(320deg, $c-alt 0%, $c-contrast 60%);
+    color: white;
+
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    a {
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+  .content-account {
+    background: transparent;
+  }
+}
+
+.account {
+  padding-top: 4rem;
+
+  @media (min-width: 768px) {
+    padding-top: 4.5rem;
+  }
+}
+
+
+// ------------------------------------------------
+// Header da area de conta
+// ------------------------------------------------
+
+.header-account {
+  background-color: $c-main;
+  background: linear-gradient(320deg, $c-main, $c-contrast);
+  color: white;
+  padding: 1rem 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 102030;
+
+  h1 {
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-account-title {
+    font-size: 1.25rem;
+    line-height: 0.9;
+    letter-spacing: .61803px;
+    font-weight: bolder;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    color: white;
+    font-weight: 600;
+    text-shadow: none !important;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      line-height: 0.9;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    .small {
+      display: block;
+      opacity: 0.8;
+      font-size: 70%;
+      font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+
+      @media (min-width: 768px) {
+        font-size: 40%;
+      }
+    }
+
+    .img {
+      max-width: 26px;
+      margin-right: .5rem;
+
+      @media (min-width: 768px) {
+        max-width: 40px;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .header-account-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-account-name {
+      color: inherit;
+      font-size: 1rem;
+      font-weight: normal;
+      margin: 0;
+      letter-spacing: .61803px;
+    }
+
+    .btn {
+      margin-left: 2rem;
+    }
+  }
+
+  .btn-menu {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+  }
+}
+
+// ------------------------------------------------
+// Footer da area de contas
+// ------------------------------------------------
+
+.footer-account {
+  background-color: #222;
+  color: #aaa;
+  padding: 2rem 0;
+  text-align: center;
+
+  .row {
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .logo-footer {
+    opacity: 0.61803;
+  }
+
+  .footer-copyright {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .content-account {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background: url(../img/bg-gipi.jpg);
+  }
+}
+
+// ------------------------------------------------
+// Box padrão da area de contas
+// ------------------------------------------------
+
+.box-account {
+  @include box-card;
+
+  .title-box {
+    font-size: 1.5rem;
+    color: $c-dark;
+  }
+}
+
+.box-account-large {
+  @include box-card-large;
+
+  .title-box {
+    font-size: 1.5rem;
+    color: $c-dark;
+  }
+}
+
+// ------------------------------------------------
+// Formulários
+// ------------------------------------------------
+
+.form {
+
+  .title {
+    color: $c-dark;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: $c-mutted;
+    margin-top: 2rem;
+    font-weight: normal;
+  }
+
+  .esqueci-minha-senha {
+    display: inline-block;
+    line-height: 1;
+    margin-top: 0.5rem;
+
+    &:hover {
+      color: $c-main;
+    }
+  }
+
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+// ------------------------------------------------
+// Listagem paginas vermelhas
+// ------------------------------------------------
+
+.listagem-account {
+
+  .account-item {
+    padding: 1rem;
+  }
+
+  .item-link {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 2rem;
+    z-index: 0;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.6;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      content: " ";
+      display: block;
+      pointer-events: none;
+      border-radius: 0.5rem;
+      transition: all 1.61803s cubic-bezier(.160, .560, .170, .999);
+      background: linear-gradient(320deg, rgba($c-main, 0.75) 0%, rgba($c-main, 0) 50%);
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        background: linear-gradient(-320deg, rgba($c-main, 0.9) 0%, rgba($c-main, 0) 60%);
+      }
+
+      .item-img {
+        transform: translateY(-2px);
+      }
+
+      .item-title {
+        text-shadow: 0 0 0;
+      }
+    }
+  }
+
+  .item-title {
+    color: inherit;
+    text-transform: uppercase;
+    margin: 0.75rem 0;
+    font-size: 1.15rem;
+  }
+
+  .item-img {
+    transition: all .4s cubic-bezier(.160, .560, .170, .999);
+    max-height: 2.5rem;
+    max-width: 2.5rem;
+  }
+}
+
+// ------------------------------------------------
+// Aside menu
+// ------------------------------------------------
+
+.aside-menu {
+  @include box-card;
+
+  .list-group-item {
+    padding: 0;
+    line-height: 1.2;
+
+    .nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .75rem 1rem;
+
+      .badge {
+        padding: 0 0.25rem;
+        border-radius: 1rem;
+        line-height: 1.25rem;
+        min-width: 1.25rem;
+        background-color: $c-main;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+
+
+// ------------------------------------------------
+// Main Content
+// ------------------------------------------------
+
+.main-content {
+  @media (min-width: 576px) {
+    @include box-card-large;
+  }
+
+  .main-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: $c-dark;
+    font-weight: bold;
+
+    @media (min-width: 992px) {
+      font-size: 2rem;
+    }
+
+    &.-form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &+p {
+      margin-top: -1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: $c-mutted;
+      @include quicksand;
+    }
+  }
+}
+
+
+// ------------------------------------------------
+// Nav content
+// ------------------------------------------------
+
+.main-content-nav {
+  border-top: 2px solid #eee;
+  margin: 2rem -2rem -2rem -2rem;
+  padding: 1rem 2rem;
+  background-color: $c-light;
+}
+
+
+// ------------------------------------------------
+// PAINEL DO CLIENTE
+// abertura-de-tickets
+// tutoriais-de-usabilidade
+// painel-de-controle
+// o-que-ha-de-novo
+// ideia-de-nova-ferramenta
+// duvidas-frequentes
+// artigos-e-e-books
+// webinars
+// boletos
+// mensagens
+// ------------------------------------------------
+
+.listagem-accordion {
+
+  .item-accordion {
+
+    &+.item-accordion {
+      margin-top: 1.5rem;
+    }
+
+    .title {
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      @media (min-width: 992px) {
+        font-size: 1rem;
+      }
+
+      &::before {
+        @include anima;
+        display: inline-block;
+        width: 0;
+        content: "";
+        position: relative;
+        background-color: $c-main;
+        height: 2px;
+      }
+
+      &[aria-expanded="true"],
+      &:hover {
+        color: $c-main;
+
+        &::before {
+          width: 2rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .datetime {
+        font-weight: normal;
+        display: block;
+      }
+    }
+
+    .accordion-content {
+      padding: 1rem;
+      background-color: $c-light;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      margin-left: 1.5rem;
+
+      @media (min-width: 992px) {
+        margin-left: 2.5rem;
+      }
+    }
+  }
+}
+
+.listagem-medias {
+
+  .list-item {
+    padding: 0;
+
+    &+.list-item {
+      margin-top: 1rem;
+    }
+
+    &.-artigo {
+
+      .media {
+        @media (max-width: 575.98px) {
+          flex-flow: column nowrap;
+        }
+      }
+    }
+  }
+
+  .media {
+    position: relative;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: linear-gradient(-170deg, rgba($c-dark, 0.08) 0%, rgba($c-dark, 0.005) 60%);
+
+    &:hover {
+      background: linear-gradient(-170deg, rgba($c-dark, 0.08) 0%, rgba($c-dark, 0.005) 100%);
+
+      .embed-responsive .fa {
+        &::before {
+          content: "\f002";
+        }
+
+        text-shadow: 0px 3px 0px #ccc,
+        0px 14px 10px rgba(0, 0, 0, 0.15),
+        0px 0.5rem 2px rgba(0, 0, 0, 0.1),
+        0px 34px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .title {
+        color: $c-main;
+      }
+    }
+
+    .embed-responsive {
+      @include bgimage;
+      background-size: 115%;
+      margin-bottom: 1rem;
+
+      @media (min-width: 576px) {
+        max-width: 8rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+
+      img {
+        opacity: 0;
+        z-index: -10;
+      }
+
+      .fas,
+      .fa {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        color: white;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include anima;
+        text-shadow: 0px 3px 0px #ccc,
+          0px 14px 10px rgba(0, 0, 0, 0.15),
+          0px 1rem 2px rgba(0, 0, 0, 0.1),
+          0px 34px 30px rgba(0, 0, 0, 0.1);
+
+        &.fa-file-pdf {
+          font-size: 3rem;
+          color: #fb5158;
+          text-shadow: none;
+        }
+      }
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      color: $c-dark;
+    }
+  }
+}
+
+#tutoriais {
+
+  .accordion-content {
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
+    border-radius: initial;
+  }
+}
+
+#propostas {
+
+  .accordion-content {
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
+    border-radius: initial;
+
+    .embed-responsive {
+
+      &::before {
+        display: none;
+      }
+
+      .fas {
+        color: $c-mutted;
+        text-shadow: none;
+      }
+
+      .fa-exclamation-triangle {
+        font-size: 3rem;
+        color: $c-googleplus;
+      }
+
+      .fa-check {
+        font-size: 3rem;
+        color: $c-whatsapp;
+      }
+
+      .fa,
+      .fas {
+        position: static;
+      }
+    }
+  }
+}
+
+.table {
+
+  .fa,
+  .fab,
+  .fas {
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: bold;
+  }
+}
+
+// ------------------------------------------------
+// PAINEL DO CONTADOR
+// painel-de-clientes
+// artigos-e-e-books
+// webinars
+// mensagens
+// duvidas-frequentes
+// ------------------------------------------------
+
+.form-group-filro-arquivos .styled-select {
+  &::after {
+    content: "\f073";
+    font-size: 1rem;
+    color: $c-mutted;
+  }
+}
+
+#arquivos {
+
+  .accordion-content {
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
+    border-radius: initial;
+  }
+
+  .item-accordion>.title {
+
+    &[aria-expanded="true"] {
+
+      .badge {
+        background-color: $c-main;
+        color: white;
+      }
+    }
+
+    .badge {
+      color: white;
+      background-color: $c-mutted;
+      margin-right: 1rem;
+    }
+
+    small {
+      margin-left: 0.25rem;
+      opacity: 0.75;
+    }
+  }
+
+  .list-item {
+
+    &+.list-item {
+      margin-top: 0.5rem;
+    }
+
+    &:hover {
+
+      .title {
+        color: $c-main;
+
+        &::before {
+          width: 2rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .icone {
+        color: $c-main;
+      }
+    }
+
+    .media {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .icone {
+      font-size: 1.5rem;
+      margin-right: .5rem;
+      color: $c-dark;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 13px;
+
+      @media (min-width: 992px) {
+        font-size: inherit;
+      }
+    }
+
+    .datetime {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-end;
+      line-height: 1;
+      font-weight: normal;
+      margin-right: 0.5rem;
+      min-width: 10%;
+
+      @media (max-width: 991px) {
+        min-width: 20%;
+      }
+    }
+  }
+}
+
+#html .tooltip {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+
+// ------------------------------------------------
+// PAINEL DO PARCEIRO
+// abertura-de-tickets
+// mensagens
+// indicacoes
+// ------------------------------------------------
+
+#html {
+
+  .aside-menu {
+    .list-group-item.-nova-indicacao {
+      border: none !important;
+      margin-top: 1rem;
+    }
+  }
+
+  .btn-nova-indicacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .fa {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+
+.listagem-account {
+
+  .account-item {
+
+    &.-nova-indicacao {
+
+      .item-link {
+        border-radius: .5rem;
+        background-color: rgba(#d82443, 0.61803);
+
+        &:hover {
+          background-color: rgba(#d82443, 1);
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.main-title {
+
+  &.-form {
+
+    .form-group {
+      &.form-group-filro-servico .styled-select {
+        &::after {
+          content: "\f085";
+        }
+      }
+
+      &.form-group-filro-uf .styled-select {
+        &::after {
+          content: "\f3c5";
+        }
+      }
+
+      &.form-group-filro-data .styled-select {
+        &::after {
+          content: "\f073";
+        }
+      }
+
+      &.form-group-filro-status .styled-select {
+        &::after {
+          content: "\f0ae";
+        }
+      }
+    }
+
+    .styled-select {
+      &::after {
+        font-size: 1rem;
+        color: $c-mutted;
+      }
+
+      &:hover {
+        &::after {
+          color: $c-main;
+        }
+      }
+    }
+  }
+}
+
+.table-indicacoes {
+
+  tbody {
+
+    td:last-child,
+    td:first-child {
+      width: 8%;
+    }
+  }
+}

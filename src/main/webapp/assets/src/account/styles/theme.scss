@@ -1,0 +1,357 @@
+@charset 'UTF-8';
+
+//
+// _____________________________________________________________________
+// Base do tema
+
+body {
+  @include raleway;
+  font-size: 1rem;
+
+  @media (min-width: 0) and (max-width:576px) {
+    line-height: 1.5;
+    color: $c-dark;
+  }
+
+  @media (min-width:577px) and (max-width:767px) {
+    line-height: 1.4;
+  }
+
+  @media (min-width:768px) and (max-width:992px) {
+    line-height: 1.3;
+  }
+
+  @media (min-width:993px) {
+    line-height: 1.2;
+    font-size: 14px;
+  }
+}
+
+// #html .section:not(.-p) {
+//   @media (min-width: 0) and (max-width:576px) {
+//     margin-top: 4rem;
+//     margin-bottom: 4rem;
+//   }
+
+//   @media (min-width:577px) and (max-width:992px) {
+//     margin-top: 5rem;
+//     margin-bottom: 5rem;
+//   }
+
+//   @media (min-width:993px) {
+//     margin-top: 6rem;
+//     margin-bottom: 6rem;
+//   }
+// }
+
+#html .section {
+  @media (min-width: 0) and (max-width:576px) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  @media (min-width:577px) and (max-width:992px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width:993px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+
+//
+// _____________________________________________________________________
+// Active item 
+
+
+$pages: "home",
+"abertura-de-tickets",
+"tutoriais-de-usabilidade",
+"painel-de-controle",
+"o-que-ha-de-novo",
+"ideia-de-nova-ferramenta",
+"duvidas-frequentes",
+"artigos-e-e-books",
+"webinars",
+"boletos",
+"indicacao",
+"indicacoes",
+"nova-indicacao",
+"painel-de-clientes",
+"artigos-e-e-books",
+"webinars",
+"mensagens",
+"duvidas-frequentes",
+"mensagens";
+
+@each $page in $pages {
+  .page.-#{$page} {
+
+    .nav-item.-#{$page} {
+      .nav-link {
+        color: $c-main;
+        text-shadow: 0 0 0;
+      }
+    }
+  }
+}
+
+
+//
+// _____________________________________________________________________
+// Tema
+
+$cores: ("main": $c-main,
+  "primary": $c-main,
+  "contrast": $c-contrast,
+  "secondary": $c-contrast,
+  "alt": $c-alt,
+  "dark": $c-dark,
+  "light": $c-light,
+
+  "green": $c-green,
+  "grey": $c-grey,
+  "red": $c-red,
+  "white": $c-white,
+  "black": $c-black,
+  "mutted": $c-mutted,
+
+  "facebook": $c-facebook,
+  "twitter": $c-twitter,
+  "googleplus": $c-googleplus,
+  "instagram": $c-instagram,
+  "youtube": $c-youtube,
+  "linkedin": $c-linkedin,
+  "pinterest": $c-pinterest,
+  "whatsapp": $c-whatsapp);
+
+@function cor($key) {
+  @return map-get($colors, $key);
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+html {
+  
+  @each $nome,
+  $cor in $cores {
+    .c-#{$nome} {
+      color: $cor !important;
+    }
+
+    .bc-#{$nome} {
+      background-color: $cor !important;
+    }
+
+    .btn-#{$nome} {
+      background-color: $cor;
+      color: white;
+
+      &:hover {
+        background-color: tint($cor, 10%);
+        color: white;
+      }
+
+      &.active,
+      &:active {
+        background-color: shade($cor, 5%);
+        color: white;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($cor, 0.25);
+        color: white;
+      }
+    }
+
+    .btn-border-#{$nome} {
+      color: $cor;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 2px $cor;
+
+      &:hover,
+      &:active {
+        background-color: $cor;
+        color: white;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($cor, 0.25);
+      }
+    }
+  }
+
+  .btn {
+    @include btn;
+  }
+  
+  .btn-white,
+  .btn-white:hover,
+  .btn-white:focus,
+  .btn-white:active,
+  .btn-border-white:hover,
+  .btn-border-white:focus,
+  .btn-border-white:active {
+    color: #333;
+  }
+}
+
+
+//
+// _____________________________________________________________________
+// Tema
+
+.page {}
+
+.dropdown-menu {
+  @include sombra;
+  border: none;
+}
+
+.box-card {
+  @include box-card;
+}
+
+.box-card.-center {
+  max-width: 320px;
+  margin: auto;
+
+  @media only screen and (min-width: 1024px) {
+    max-width: 460px;
+    padding: 2rem;
+  }
+}
+
+.datetime {
+  color: $c-mutted;
+  font-weight: bold;
+  @include raleway;
+}
+
+.article-body {
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    margin-top: 1.25rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.embed-responsive {
+
+  &.-A4 {
+
+    &::before {
+      padding-top: 143%;
+    }
+  }
+}
+
+.form {
+
+  .title {
+    @include title;
+    font-size: 1.25rem;
+  }
+}
+
+
+//
+// _____________________________________________________________________
+// Responsivo
+
+
+@media (max-width: 575.98px) {
+
+  .col-md-4+.col-md-8,
+  .col-md-8+.col-md-4,
+  .col-md-6+.col-md-6 {
+    margin-top: 3rem;
+
+    &.form-group {
+      margin-top: 0;
+    }
+  }
+}
+
+.mm-menu {
+  background: $c-dark;
+  color: $c-light;
+
+  .mm-navbar {
+
+    .mm-navbar__title {
+      @include title;
+    }
+
+    a {
+      color: inherit !important;
+    }
+  }
+
+  .mm-navbars_bottom {
+
+    .fa {
+      font-size: 1.5rem;
+    }
+  }
+
+  .mobile-navigation {
+    font-weight: bold;
+
+    .title {
+      @include title;
+      color: inherit !important;
+      padding: 15px 20px;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      background-color: lighten($c-dark, 2%);
+    }
+  }
+}
+
+
+//
+// _____________________________________________________________________
+// Lista
+
+.theme-dl {
+
+  &.-box {
+    @include box-card;
+  }
+
+  dt {
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: $c-mutted;
+    font-weight: normal;
+    font-weight: 600;
+  }
+
+  dd {
+    font-weight: bold;
+  }
+
+  dd+dt {
+    margin-top: 1rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    @include title;
+  }
+}

@@ -1,0 +1,297 @@
+@charset "UTF-8";
+
+// ------------------------------------------------
+// ESTILO DAS PÁGINAS DE CONTA
+// ------------------------------------------------
+
+.page.-account {
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-size: 14px;
+
+  &.-red {
+
+    .account {
+      background: #c10828;
+      background: -webkit-gradient(linear, left top, left bottom, from(#c10828), to(#ae0236));
+      background: -webkit-linear-gradient(top, #c10828 0%, #ae0236 100%);
+      background: -o-linear-gradient(top, #c10828 0%, #ae0236 100%);
+      background: linear-gradient(180deg, #c10828 0%, #ae0236 100%);
+      color: white;
+
+      a {
+
+        &:hover {
+          color: inherit;
+        }
+      }
+    }
+
+    .content-account {
+      background: transparent;
+    }
+  }
+
+  .color {
+    color: #C24845;
+  }
+
+  // ------------------------------------------------
+  // Header da area de conta
+  // ------------------------------------------------
+
+  .header-account {
+    background-color: #C24845;
+    background: linear-gradient(-45deg, #c10828, #ae0236);
+    color: white;
+    padding: 1rem 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-account-title {
+      font-size: 2rem;
+      line-height: 0.9;
+      letter-spacing: .61803px;
+      font-weight: bolder;
+      margin-bottom: 0;
+      display: flex;
+      align-items: flex-start;
+      color: white;
+
+      .small {
+        font-size: 40%;
+        display: block;
+        opacity: 0.8;
+        font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+      }
+
+      .img {
+        max-width: 40px;
+        margin-right: 1rem;
+      }
+    }
+
+    .header-account-user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .header-account-name {
+        color: inherit;
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0;
+        letter-spacing: .61803px;
+      }
+
+      .mad_button {
+        margin-left: 2rem;
+        padding: 0 1rem;
+        line-height: 2rem;
+        height: auto;
+      }
+    }
+  }
+
+  // ------------------------------------------------
+  // Footer da area de contas
+  // ------------------------------------------------
+
+  .footer-account {
+    background-color: #222;
+    color: #aaa;
+    padding: 2rem 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .logo-footer {
+      opacity: 0.61803;
+    }
+  }
+
+  .content-account {
+    padding: 4rem 0;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background: url(../img/bg-gipi.jpg);
+  }
+
+  // ------------------------------------------------
+  // Box padrão da area de contas
+  // ------------------------------------------------
+
+  .box-account {
+    border: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: white;
+    transition: all .4s cubic-bezier(.160, .560, .170, .999);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 3px 1px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.05), 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 5px 5px -3px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  // ------------------------------------------------
+  // Formulários
+  // ------------------------------------------------
+
+  .form-login {
+    max-width: 400px;
+    margin: auto;
+
+    ul li+li {
+      margin-top: 1rem;
+    }
+
+    .esqueci_minha_senha {
+      display: inline-block;
+      line-height: 1;
+      margin-top: 0.5rem;
+    }
+
+    .esqueci_minha_senha:hover {
+      color: #C24845;
+    }
+  }
+
+  // ------------------------------------------------
+  // Listagem paginas vermelhas
+  // ------------------------------------------------
+
+  .listagem-account {
+
+    .account-item {
+      padding: 1rem;
+    }
+
+    .item-link {
+      position: relative;
+      display: block;
+      height: 100%;
+      padding: 2rem;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.33333;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        content: " ";
+        display: block;
+        pointer-events: none;
+        border-radius: 0.5rem;
+        transition: all 1.61803s cubic-bezier(.160, .560, .170, .999);
+        background: linear-gradient(-45deg, rgba(255, 0, 80, 0.4) 0%, rgba(255, 255, 255, 0) 66%);
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+          background: linear-gradient(45deg, rgba(255, 0, 80, 0.5) 0%, rgba(255, 255, 255, 0) 66%);
+        }
+
+        .item-img {
+          transform: translateY(-2px);
+        }
+
+        .item-title {
+          text-shadow: 0 0 0;
+        }
+      }
+    }
+
+    .item-title {
+      color: inherit;
+      text-transform: uppercase;
+      margin: 0.75rem 0;
+      font-size: 1.15rem;
+    }
+
+    .item-img {
+      transition: all .4s cubic-bezier(.160, .560, .170, .999);
+      max-height: 2.5rem;
+      max-width: 2.5rem;
+    }
+  }
+
+  // ------------------------------------------------
+  // Tabs da area de conta
+  // ------------------------------------------------
+
+  .tabs-section {
+    display: flex;
+    align-items: flex-start;
+
+    .tab-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .tab-footer li+li {
+      margin-left: 1rem;
+    }
+
+    .tab-footer {
+      a {
+        padding: 0 1rem;
+        border-radius: 2rem;
+        cursor: pointer;
+        color: #888;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 2rem;
+        box-shadow: inset 0 0 0 2px #aaa;
+        transition: all .4s cubic-bezier(.160, .560, .170, .999);
+      }
+
+      a:hover {
+        box-shadow: inset 0 0 0 2px #C24845;
+        color: #C24845;
+      }
+
+      a .lnr {
+        margin-right: 0.5rem;
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .box-account.tabs_nav {
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: 2rem;
+  }
+}
+
+
+// ------------------------------------------------
+// PAINEL DO CLIENTE
+// abertura-de-tickets
+// tutoriais-de-usabilidade
+// painel-de-controle
+// o-que-há-de-novo
+// ideia-de-nova-ferramenta
+// dúvidas-frequentes
+// artigos-e-e-books
+// webinars
+// boletos
+// mensagens
+// ------------------------------------------------

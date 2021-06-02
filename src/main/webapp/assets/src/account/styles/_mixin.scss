@@ -1,0 +1,403 @@
+@mixin raleway {
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-style: normal;
+}
+
+@mixin quicksand {
+  font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-style: normal;
+}
+
+@mixin tamanhos {
+  border: 0 none;
+  padding: 0 1rem;
+  line-height: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+
+  &.-small {
+    padding: 0 0.75rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  &.-medium {
+    padding: 0 1.5rem;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2.5rem;
+  }
+
+  &.-large {
+    padding: 0 2rem;
+    line-height: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &.-small {
+      font-size: .75rem;
+    }
+
+    &.-medium {
+      font-size: 14.5px;
+    }
+
+    &.-large {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@mixin input {
+  font-size: 14px;
+  @include anima;
+  @include tamanhos;
+  background: transparent;
+  box-shadow: inset 0 -1px 0 0 $c-mutted;
+
+  &:not(.-border) {
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  &::-webkit-input-placeholder {
+    @include anima;
+    opacity: .4;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  &:-moz-placeholder {
+    @include anima;
+    opacity: .4;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  &::-moz-placeholder {
+    @include anima;
+    opacity: .4;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  &:-ms-input-placeholder {
+    @include anima;
+    opacity: .4;
+    color: inherit;
+    font-weight: 500;
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 0 $c-alt;
+
+    &::-webkit-input-placeholder {
+      opacity: .5;
+      text-shadow: 0 0 0;
+    }
+
+    &:-moz-placeholder {
+      opacity: .5;
+      text-shadow: 0 0 0;
+    }
+
+    &::-moz-placeholder {
+      opacity: .5;
+      text-shadow: 0 0 0;
+    }
+
+    &:-ms-input-placeholder {
+      opacity: .5;
+      text-shadow: 0 0 0;
+    }
+  }
+
+  &:focus {
+    box-shadow: inset 0 -2px 0 0 $c-alt;
+    background: transparent;
+    color: inherit;
+
+    &::-webkit-input-placeholder {
+      transition-delay: 0.25s;
+      opacity: 0.25;
+    }
+
+    &:-moz-placeholder {
+      transition-delay: 0.25s;
+      opacity: 0.25;
+    }
+
+    &::-moz-placeholder {
+      transition-delay: 0.25s;
+      opacity: 0.25;
+    }
+
+    &:-ms-input-placeholder {
+      transition-delay: 0.25s;
+      opacity: 0.25;
+    }
+  }
+
+  &.-border {
+    padding: 0 1rem;
+    line-height: 2rem;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 0 2px $c-alt;
+
+    &.-small {
+      padding: 0 0.75rem;
+      border-radius: 1.5rem;
+    }
+
+    &.-medium {
+      padding: 0 1.5rem;
+      border-radius: 2.5rem;
+    }
+
+    &.-large {
+      padding: 0 2rem;
+      border-radius: 3rem;
+    }
+
+    &:hover {
+      box-shadow: inset 00 0 0 2px $c-main;
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px $c-alt;
+    }
+  }
+}
+
+@mixin btn {
+  font-size: 13px;
+  @include anima;
+  @include tamanhos;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin sombra {
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.05), 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 5px 5px -3px rgba(0, 0, 0, 0.08);
+}
+
+@mixin sombra-sm {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 3px 1px -2px rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.08);
+}
+
+@mixin sombra-lg {
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.05), 0 9px 46px 8px rgba(0, 0, 0, 0.05), 0 11px 15px -7px rgba(0, 0, 0, 0.08);
+}
+
+@mixin anima {
+  // transition: all .24s cubic-bezier(.0, .0, .58, 1.0);
+  transition: all .4s cubic-bezier(.160, .560, .170, .999);
+  // transform: translate3d(0, 0, 0) translateZ(0);
+  // backface-visibility: hidden;
+  // will-change: transform;
+}
+
+@keyframes animeDropdown {
+  from {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+}
+
+@mixin animeDropdown {
+  animation: animeDropdown 0.36s 0s normal both;
+  animation-timing-function: cubic-bezier(.160, .560, .170, .999);
+}
+
+@keyframes animeStickyHeader {
+  from {
+    transform: translateY(-4rem) translateZ(-500px);
+    opacity: 0;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.07), 0 9px 46px 8px rgba(0, 0, 0, 0.06), 0 11px 15px -7px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@mixin animeStickyHeader {
+  animation: animeStickyHeader 0.618s 0s normal both;
+  animation-timing-function: cubic-bezier(.160, .560, .170, .999);
+}
+
+@mixin box-card {
+  background-color: white;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.025), 0 3px 14px 2px rgba(0, 0, 0, 0.025), 0 5px 5px -3px rgba(248, 186, 186, 0.05);
+  @include anima;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 1rem;
+  }
+
+  &:hover {
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.05), 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 5px 5px -3px rgba(248, 186, 186, 0.08);
+  }
+}
+
+@mixin box-card-large {
+  background-color: white;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.025), 0 3px 14px 2px rgba(0, 0, 0, 0.025), 0 5px 5px -3px rgba(248, 186, 186, 0.05);
+  @include anima;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 2rem;
+  }
+
+  &:hover {
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.05), 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 5px 5px -3px rgba(248, 186, 186, 0.08);
+  }
+}
+
+@mixin clearfix {
+
+  &::before,
+  &::after {
+    display: table;
+    content: " ";
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin title {
+  @include raleway;
+  color: $c-dark;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@mixin titleBold {
+  @include raleway;
+  color: $c-dark;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@mixin subtitle {
+  @include raleway;
+  font-weight: 500;
+  color: $c-dark;
+  line-height: 1.15;
+}
+
+@mixin fadein {
+  animation: fadeIn 0.4s normal none;
+  animation-timing-function: ease-out;
+}
+
+@mixin bgimage {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+}
+
+@mixin BoxShadow ($dp) {
+  @if $dp==0 {
+    box-shadow: none
+  }
+
+  @else if $dp==1 {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==2 {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==3 {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .12), 0 1px 8px 0 rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==4 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==6 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==8 {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==9 {
+    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, .14), 0 3px 16px 2px rgba(0, 0, 0, .12), 0 5px 6px -3px rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==12 {
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12), 0 7px 8px -4px rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==16 {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .20)
+  }
+
+  @else if $dp==24 {
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .20)
+  }
+}
+
+/* Shadow 1dp */
+@mixin shadow1dp {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 2dp */
+@mixin shadow2dp {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 3dp */
+@mixin shadow3dp {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 4dp */
+@mixin shadow4dp {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 6dp */
+@mixin shadow6dp {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 8dp */
+@mixin shadow8dp {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 9dp */
+@mixin shadow9dp {
+  box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 12dp */
+@mixin shadow12dp {
+  box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 16dp */
+@mixin shadow16dp {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.20);
+}
+
+/* Shadow 24dp */
+@mixin shadow24dp {
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.20);
+}
