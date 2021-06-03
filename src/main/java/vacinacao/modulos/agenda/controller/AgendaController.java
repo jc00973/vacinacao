@@ -16,11 +16,11 @@ public class AgendaController {
     @Autowired
     VacinaNegocio vacinaNegocio;
 
+
     @GetMapping("/vacinacao/agendas")
     public String busca(HttpServletRequest request) {
         return "/vacinacao/agendas";
     }
-
 
     @GetMapping("/vacinacao/agendas/{id}")
     public String carregarAgendaEspecifica(@PathVariable Long id, HttpServletRequest request) {
